@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tejas Koli | CS Student, AI Media & Creative Technologist</title>
+    <meta name="description" content="Portfolio of Tejas Koli — B.Sc. Computer Science student, content creator, video editor, and AI-assisted media enthusiast based in Mumbai.">
+    
+    <!-- Updated Fonts: Syne (Display), Outfit (Body), Fira Code (Code/Accents) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Outfit"', 'sans-serif'],
+                        display: ['"Syne"', 'sans-serif'],
+                        mono: ['"Fira Code"', 'monospace'],
+                    },
+                    colors: {
+                        studio: {
+                            950: '#09090b',
+                            900: '#121216',
+                            800: '#1c1c22',
+                            border: '#27272f',
+                            accent: '#10b981', // Emerald
+                            secondary: '#8b5cf6' // Violet
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Subtle Grid Background */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        .light .bg-grid {
+            background-image: 
+                linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-zinc-50 text-zinc-900 dark:bg-studio-950 dark:text-zinc-100 font-sans antialiased selection:bg-emerald-500/30 selection:text-emerald-300 transition-colors duration-300">
+
+    <!-- Background Grid Overlay -->
+    <div class="fixed inset-0 bg-grid pointer-events-none z-0"></div>
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-zinc-50/80 dark:bg-studio-950/80 border-b border-zinc-200 dark:border-studio-border">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="font-display font-extrabold text-xl tracking-tight flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>TEJAS<span class="text-zinc-400 font-semibold">.KOLI</span></span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600 dark:text-zinc-400">
+                <a href="#about" class="hover:text-emerald-500 transition-colors">About</a>
+                <a href="#work" class="hover:text-emerald-500 transition-colors">Case Studies</a>
+                <a href="#experience" class="hover:text-emerald-500 transition-colors">Experience</a>
+                <a href="#skills" class="hover:text-emerald-500 transition-colors">Stack</a>
+                <a href="#contact" class="hover:text-emerald-500 transition-colors">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle" aria-label="Toggle Theme" class="p-2 rounded-lg border border-zinc-200 dark:border-studio-border hover:bg-zinc-200/50 dark:hover:bg-studio-800 transition-colors">
+                    <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-zinc-300"></i>
+                    <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-zinc-700"></i>
+                </button>
+                <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900 text-white dark:bg-emerald-500 dark:text-zinc-950 font-semibold text-sm hover:opacity-90 transition-opacity">
+                    <span>Let's Connect</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+        <!-- A. HERO SECTION -->
+        <section class="max-w-6xl mx-auto px-6 pt-20 pb-24 md:pt-28 md:pb-32">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-8 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono text-xs">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                        <span>B.Sc. CS Student • AI Media & Content Creator • Mumbai</span>
+                    </div>
+
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
+                        Where <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-violet-500">Computer Science</span> meets Creative Storytelling.
+                    </h1>
+
+                    <p class="text-lg sm:text-xl font-light text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
+                        I'm <strong class="text-zinc-900 dark:text-zinc-100 font-semibold">Tejas Koli</strong>—an enthusiastic Computer Science undergraduate building foundational software skills in Java and Python while producing high-retention digital media and AI-assisted visual workflows.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#work" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-500 text-zinc-950 font-semibold hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/20">
+                            <span>Explore My Work</span>
+                            <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="resume.pdf" download class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-zinc-300 dark:border-studio-border bg-white/50 dark:bg-studio-900/50 hover:border-zinc-400 dark:hover:border-zinc-600 font-medium transition-all">
+                            <i data-lucide="download" class="w-4 h-4"></i>
+                            <span>Download Resume</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick Social Links -->
+                    <div class="flex flex-wrap items-center gap-6 pt-4 text-sm font-mono text-zinc-500 dark:text-zinc-400">
+                        <a href="https://youtube.com/@skeletonsayssubscribe" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-red-500 transition-colors">
+                            <i data-lucide="youtube" class="w-4 h-4"></i>
+                            <span>@skeletonsayssubscribe</span>
+                        </a>
+                        <a href="mailto:tejaskoli0752@gmail.com" class="flex items-center gap-2 hover:text-emerald-500 transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <span>tejaskoli0752@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Creative Terminal / Identity Card -->
+                <div class="lg:col-span-4">
+                    <div class="rounded-2xl border border-zinc-200 dark:border-studio-border bg-white dark:bg-studio-900 p-6 shadow-2xl relative overflow-hidden">
+                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-zinc-200 dark:border-studio-border">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                                <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                            </div>
+                            <span class="font-mono text-xs text-zinc-500">tejas_profile.json</span>
+                        </div>
+                        <pre class="font-mono text-xs sm:text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 overflow-x-auto"><code>{
+  <span class="text-emerald-500">"name"</span>: "Tejas Koli",
+  <span class="text-emerald-500">"location"</span>: "Malad (W), Mumbai",
+  <span class="text-emerald-500">"degree"</span>: "B.Sc. Computer Science",
+  <span class="text-emerald-500">"focus"</span>: [
+    "Java & Core Programming",
+    "AI Video & Image Prompting",
+    "Short-Form Retention Editing"
+  ],
+  <span class="text-emerald-500">"status"</span>: "Open to Internships"
+}</code></pre>
+                        <div class="mt-6 pt-4 border-t border-zinc-200 dark:border-studio-border flex items-center justify-between text-xs text-zinc-500 font-mono">
+                            <span>Mumbai, IN</span>
+                            <span class="text-emerald-500 flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active Creator
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- B. ABOUT ME SECTION -->
+        <section id="about" class="max-w-6xl mx-auto px-6 py-20 border-t border-zinc-200 dark:border-studio-border reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-4">
+                    <span class="font-mono text-xs uppercase tracking-widest text-emerald-500">01 / Identity</span>
+                    <h2 class="font-display text-3xl font-bold mt-2">Bridging Logic & Visual Pacing</h2>
+                </div>
+                <div class="lg:col-span-8 space-y-6 text-zinc-600 dark:text-zinc-400 leading-relaxed text-base sm:text-lg font-normal">
+                    <p>
+                        I am currently pursuing my <strong class="text-zinc-900 dark:text-zinc-100 font-semibold">B.Sc. in Computer Science</strong> at Prahladrai Dalmia Lions College in Mumbai. While building a strong foundation in programming languages like Java, Python, C++, and SQL, I actively explore how emerging artificial intelligence tools reshape digital storytelling and marketing.
+                    </p>
+                    <p>
+                        Outside the classroom, I manage and edit content for my YouTube channel, <strong class="text-zinc-900 dark:text-zinc-100 font-semibold">@skeletonsayssubscribe</strong>. Combining analytical retention metrics with generative AI tools like Gemini, Veo 3, and Omni allows me to approach both software engineering and creative media with curiosity, discipline, and an eye for audience engagement.
+                    </p>
+                    
+                    <!-- Personal Interests / Beyond Code -->
+                    <div class="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div class="p-3.5 rounded-xl border border-zinc-200 dark:border-studio-border bg-white/40 dark:bg-studio-900/40">
+                            <i data-lucide="book-open" class="w-4 h-4 text-emerald-500 mb-2"></i>
+                            <div class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Reading Books</div>
+                            <div class="text-xs text-zinc-500">Continuous learning</div>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-zinc-200 dark:border-studio-border bg-white/40 dark:bg-studio-900/40">
+                            <i data-lucide="wand-2" class="w-4 h-4 text-violet-500 mb-2"></i>
+                            <div class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Creative AI</div>
+                            <div class="text-xs text-zinc-500">Prompt experimentation</div>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-zinc-200 dark:border-studio-border bg-white/40 dark:bg-studio-900/40">
+                            <i data-lucide="flame" class="w-4 h-4 text-amber-500 mb-2"></i>
+                            <div class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Cooking</div>
+                            <div class="text-xs text-zinc-500">Precision & flavor</div>
+                        </div>
+                        <div class="p-3.5 rounded-xl border border-zinc-200 dark:border-studio-border bg-white/40 dark:bg-studio-900/40">
+                            <i data-lucide="tv" class="w-4 h-4 text-sky-500 mb-2"></i>
+                            <div class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Series & Anime</div>
+                            <div class="text-xs text-zinc-500">Visual storytelling</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- D. PROJECTS & CASE STUDIES -->
+        <section id="work" class="max-w-6xl mx-auto px-6 py-20 border-t border-zinc-200 dark:border-studio-border reveal">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="font-mono text-xs uppercase tracking-widest text-emerald-500">02 / Selected Work</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold mt-2">Featured Case Studies</h2>
+                </div>
+                <p class="text-sm text-zinc-500 max-w-md">
+                    Practical applications of short-form video production, audience retention analysis, and generative AI workflows.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Case Study 1: YouTube Channel -->
+                <article class="group rounded-2xl border border-zinc-200 dark:border-studio-border bg-white dark:bg-studio-900 p-8 flex flex-col justify-between hover:border-emerald-500/50 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-6">
+                            <span class="px-3 py-1 rounded-md bg-red-500/10 text-red-500 font-mono text-xs font-medium">
+                                Content Production & Analytics
+                            </span>
+                            <a href="https://youtube.com/@skeletonsayssubscribe" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-emerald-500 transition-colors" aria-label="Visit YouTube Channel">
+                                <i data-lucide="external-link" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+
+                        <h3 class="font-display text-2xl font-bold mb-3 group-hover:text-emerald-400 transition-colors">
+                            @skeletonsayssubscribe — Short-Form Content Engine
+                        </h3>
+                        
+                        <div class="space-y-4 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                            <div>
+                                <strong class="text-zinc-900 dark:text-zinc-200 font-semibold block mb-1">Objective & Problem:</strong>
+                                Standing out in short-form feeds requires tight pacing, strong visual hooks within the first two seconds, and data-backed iteration to prevent early viewer drop-off.
+                            </div>
+                            <div>
+                                <strong class="text-zinc-900 dark:text-zinc-200 font-semibold block mb-1">Execution & Methodology:</strong>
+                                Independently managed ideation, scripting, and post-production using CapCut. Applied dynamic transitions, sound design, and visual effects tailored to short-form retention curves, continuously refining formats based on channel performance analytics.
+                            </div>
+                            <div>
+                                <strong class="text-zinc-900 dark:text-zinc-200 font-semibold block mb-1">Outcome:</strong>
+                                Built a self-sustaining creative pipeline achieving consistent viewer engagement and steady organic reach across published releases.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-zinc-200 dark:border-studio-border flex flex-wrap items-center justify-between gap-4">
+                        <div class="flex flex-wrap gap-2 font-mono text-xs">
+                            <span class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-studio-800 text-zinc-600 dark:text-zinc-300">CapCut</span>
+                            <span class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-studio-800 text-zinc-600 dark:text-zinc-300">YouTube Studio</span>
+                            <span class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-studio-800 text-zinc-600 dark:text-zinc-300">Retention Analytics</span>
+                        </div>
+                        <a href="https://youtube.com/@skeletonsayssubscribe" target="_blank" rel="noopener noreferrer" class="text-xs font-mono font-semibold text-emerald-500 hover:underline flex items-center gap-1">
+                            View Channel <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Case Study 2: AI Media Workflows -->
+                <article class="group rounded-2xl border border-zinc-200 dark:border-studio-border bg-white dark:bg-studio-900 p-8 flex flex-col justify-between hover:border-violet-500/50 transition-all">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-6">
+                            <span class="px-3 py-1 rounded-md bg-violet-500/10 text-violet-400 font-mono text-xs font-medium">
+                                Generative AI & Marketing
+                            </span>
+                            <i data-lucide="cpu" class="w-5 h-5 text-zinc-400"></i>
+                        </div>
+
+                        <h3 class="font-display text-2xl font-bold mb-3 group-hover:text-violet-400 transition-colors">
+                            AI-Assisted Ad Concepts & Multimodal Media Pipeline
+                        </h3>
+                        
+                        <div class="space-y-4 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                            <div>
+                                <strong class="text-zinc-900 dark:text-zinc-200 font-semibold block mb-1">Objective & Problem:</strong>
+                                Traditional promotional video prototyping can be slow and resource-heavy. The goal was to develop structured prompting workflows capable of turning raw marketing ideas into cohesive visual concepts rapidly.
+                            </div>
+                            <div>
+                                <strong class="text-zinc-900 dark:text-zinc-200 font-semibold block mb-1">Execution & Methodology:</strong>
+                                Combined <span class="text-zinc-900 dark:text-zinc-200 font-medium">Gemini</span> for scriptwriting and narrative structuring with <span class="text-zinc-900 dark:text-zinc-200 font-medium">Veo 3</span> and <span class="text-zinc-900 dark:text-zinc-200 font-medium">Omni</span> for visual asset and video generation. Engineered iterative prompts controlling camera movement, lighting, and brand tone.
+                            </div>
+                            <div>
+                                <strong class="text-zinc-900 dark:text-zinc-200 font-semibold block mb-1">Outcome:</strong>
+                                Produced repeatable prompt frameworks for advertisement concepts, promotional shorts, and AI-driven storytelling experiments.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-zinc-200 dark:border-studio-border flex flex-wrap items-center justify-between gap-4">
+                        <div class="flex flex-wrap gap-2 font-mono text-xs">
+                            <span class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-studio-800 text-zinc-600 dark:text-zinc-300">Gemini</span>
+                            <span class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-studio-800 text-zinc-600 dark:text-zinc-300">Veo 3</span>
+                            <span class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-studio-800 text-zinc-600 dark:text-zinc-300">Omni</span>
+                            <span class="px-2.5 py-1 rounded bg-zinc-100 dark:bg-studio-800 text-zinc-600 dark:text-zinc-300">Prompt Engineering</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- C. EXPERIENCE & F. EDUCATION TIMELINE -->
+        <section id="experience" class="max-w-6xl mx-auto px-6 py-20 border-t border-zinc-200 dark:border-studio-border reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Experience Column -->
+                <div>
+                    <span class="font-mono text-xs uppercase tracking-widest text-emerald-500">03 / Experience</span>
+                    <h2 class="font-display text-3xl font-bold mt-2 mb-8">Hands-On Work</h2>
+
+                    <div class="relative border-l border-zinc-300 dark:border-studio-border pl-6 space-y-10">
+                        <!-- Role 1 -->
+                        <div class="relative">
+                            <span class="w-3 h-3 rounded-full bg-emerald-500 absolute -left-[30.5px] top-1.5 ring-4 ring-zinc-50 dark:ring-studio-950"></span>
+                            <div class="font-mono text-xs text-emerald-500 mb-1">2025 — PRESENT</div>
+                            <h3 class="font-display text-xl font-bold">Content Creator & Video Editor</h3>
+                            <div class="text-sm font-medium text-zinc-500 mb-3">Self-Managed Projects • YouTube (@skeletonsayssubscribe)</div>
+                            <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-400 list-disc list-inside">
+                                <li>Created and published short-form video content tailored for YouTube and social media platforms.</li>
+                                <li>Developed editing workflows using CapCut with a focus on transitions, pacing, and audience retention.</li>
+                                <li>Analyzed performance metrics to refine storytelling hooks and drive organic reach.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Role 2 -->
+                        <div class="relative">
+                            <span class="w-3 h-3 rounded-full bg-violet-500 absolute -left-[30.5px] top-1.5 ring-4 ring-zinc-50 dark:ring-studio-950"></span>
+                            <div class="font-mono text-xs text-violet-400 mb-1">ONGOING EXPLORATION</div>
+                            <h3 class="font-display text-xl font-bold">AI Content & Creative Media Enthusiast</h3>
+                            <div class="text-sm font-medium text-zinc-500 mb-3">Independent Learning & R&D</div>
+                            <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-400 list-disc list-inside">
+                                <li>Experimented with generative AI ecosystems including Gemini, Veo 3, and Omni.</li>
+                                <li>Generated ad concepts, promotional clips, and short-form media using AI-assisted workflows.</li>
+                                <li>Refined multimodal prompting techniques across text, image, and video outputs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Column -->
+                <div>
+                    <span class="font-mono text-xs uppercase tracking-widest text-emerald-500">04 / Academics</span>
+                    <h2 class="font-display text-3xl font-bold mt-2 mb-8">Education</h2>
+
+                    <div class="relative border-l border-zinc-300 dark:border-studio-border pl-6 space-y-10">
+                        <!-- Edu 1 -->
+                        <div class="relative">
+                            <span class="w-3 h-3 rounded-full bg-emerald-500 absolute -left-[30.5px] top-1.5 ring-4 ring-zinc-50 dark:ring-studio-950"></span>
+                            <div class="font-mono text-xs text-emerald-500 mb-1">2025 — 2028/29 (PURSUING)</div>
+                            <h3 class="font-display text-xl font-bold">B.Sc. Computer Science</h3>
+                            <div class="text-sm font-medium text-zinc-500 mb-2">Prahladrai Dalmia Lions College, Mumbai</div>
+                            <p class="text-sm text-zinc-600 dark:text-zinc-400">
+                                Focusing on core software development, object-oriented programming in Java, database management with SQL, and computational problem-solving.
+                            </p>
+                        </div>
+
+                        <!-- Edu 2 -->
+                        <div class="relative">
+                            <span class="w-3 h-3 rounded-full bg-zinc-400 dark:bg-zinc-600 absolute -left-[30.5px] top-1.5 ring-4 ring-zinc-50 dark:ring-studio-950"></span>
+                            <div class="font-mono text-xs text-zinc-500 mb-1">2023 — 2025 (COMPLETED)</div>
+                            <h3 class="font-display text-xl font-bold">Higher Secondary Certificate (HSC) — Science</h3>
+                            <div class="text-sm font-medium text-zinc-500">Nagindas Khandwala College, Mumbai</div>
+                        </div>
+
+                        <!-- Edu 3 -->
+                        <div class="relative">
+                            <span class="w-3 h-3 rounded-full bg-zinc-400 dark:bg-zinc-600 absolute -left-[30.5px] top-1.5 ring-4 ring-zinc-50 dark:ring-studio-950"></span>
+                            <div class="font-mono text-xs text-zinc-500 mb-1">2008 — 2023 (COMPLETED)</div>
+                            <h3 class="font-display text-xl font-bold">Secondary School Certificate (SSC)</h3>
+                            <div class="text-sm font-medium text-zinc-500">St. Anthony High School, Mumbai</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- E. SKILLS & EXPERTISE -->
+        <section id="skills" class="max-w-6xl mx-auto px-6 py-20 border-t border-zinc-200 dark:border-studio-border reveal">
+            <div class="mb-12">
+                <span class="font-mono text-xs uppercase tracking-widest text-emerald-500">05 / Capabilities</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold mt-2">Technical & Creative Stack</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Category 1 -->
+                <div class="p-6 rounded-2xl border border-zinc-200 dark:border-studio-border bg-white dark:bg-studio-900">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-4">
+                        <i data-lucide="code-2" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg mb-3">Programming & Web</h3>
+                    <ul class="space-y-2 text-sm font-mono text-zinc-600 dark:text-zinc-400">
+                        <li class="flex items-center justify-between"><span>Java</span><span class="text-xs text-emerald-500">Learning</span></li>
+                        <li>Python</li>
+                        <li>C++</li>
+                        <li>SQL</li>
+                        <li>HTML5 & CSS3</li>
+                    </ul>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="p-6 rounded-2xl border border-zinc-200 dark:border-studio-border bg-white dark:bg-studio-900">
+                    <div class="w-10 h-10 rounded-lg bg-violet-500/10 text-violet-400 flex items-center justify-center mb-4">
+                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg mb-3">Generative AI Tools</h3>
+                    <ul class="space-y-2 text-sm font-mono text-zinc-600 dark:text-zinc-400">
+                        <li>AI Prompt Engineering</li>
+                        <li>Google Gemini</li>
+                        <li>Veo 3 (Video Gen)</li>
+                        <li>Omni</li>
+                        <li>AI Ad Concepting</li>
+                    </ul>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="p-6 rounded-2xl border border-zinc-200 dark:border-studio-border bg-white dark:bg-studio-900">
+                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center mb-4">
+                        <i data-lucide="film" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg mb-3">Media & Productivity</h3>
+                    <ul class="space-y-2 text-sm font-mono text-zinc-600 dark:text-zinc-400">
+                        <li>CapCut Video Editing</li>
+                        <li>Short-Form Pacing</li>
+                        <li>YouTube Analytics</li>
+                        <li>MS Office Suite</li>
+                        <li>Internet Research</li>
+                    </ul>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="p-6 rounded-2xl border border-zinc-200 dark:border-studio-border bg-white dark:bg-studio-900">
+                    <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center mb-4">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg mb-3">Core & Languages</h3>
+                    <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+                        <li>Communication & Storytelling</li>
+                        <li>Time Management</li>
+                        <li class="pt-2 border-t border-zinc-200 dark:border-studio-border font-mono text-xs">
+                            <span class="text-zinc-900 dark:text-zinc-200">English:</span> Fluent
+                        </li>
+                        <li class="font-mono text-xs">
+                            <span class="text-zinc-900 dark:text-zinc-200">Hindi:</span> Fluent
+                        </li>
+                        <li class="font-mono text-xs">
+                            <span class="text-zinc-900 dark:text-zinc-200">Marathi:</span> Basics
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- I. CONTACT SECTION -->
+        <section id="contact" class="max-w-6xl mx-auto px-6 py-20 border-t border-zinc-200 dark:border-studio-border reveal">
+            <div class="rounded-3xl border border-zinc-200 dark:border-studio-border bg-gradient-to-br from-white to-zinc-100 dark:from-studio-900 dark:to-studio-950 p-8 sm:p-14">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    <div class="lg:col-span-7 space-y-4">
+                        <span class="font-mono text-xs uppercase tracking-widest text-emerald-500">06 / Next Steps</span>
+                        <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight">
+                            Open to Internships & Creative Collaborations.
+                        </h2>
+                        <p class="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg font-light max-w-xl">
+                            Looking for a motivated Computer Science fresher who understands both code and digital media? Reach out via email or phone—I'd love to connect.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-5 space-y-4">
+                        <!-- Email Card -->
+                        <div class="p-4 rounded-xl border border-zinc-200 dark:border-studio-border bg-white dark:bg-studio-900 flex items-center justify-between gap-4">
+                            <div class="flex items-center gap-3 overflow-hidden">
+                                <div class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-500 shrink-0">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+                                <div class="truncate">
+                                    <div class="text-xs text-zinc-500 font-mono">Email</div>
+                                    <a href="mailto:tejaskoli0752@gmail.com" class="text-sm font-semibold hover:text-emerald-500 transition-colors truncate block">
+                                        tejaskoli0752@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                            <button onclick="copyEmail()" class="px-3 py-1.5 rounded-lg text-xs font-mono border border-zinc-200 dark:border-studio-border hover:bg-zinc-100 dark:hover:bg-studio-800 transition-colors shrink-0" id="copy-btn">
+                                Copy
+                            </button>
+                        </div>
+
+                        <!-- Phone Card -->
+                        <a href="tel:+917304138393" class="p-4 rounded-xl border border-zinc-200 dark:border-studio-border bg-white dark:bg-studio-900 flex items-center gap-3 hover:border-emerald-500/50 transition-colors">
+                            <div class="p-2.5 rounded-lg bg-violet-500/10 text-violet-400 shrink-0">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-zinc-500 font-mono">Phone</div>
+                                <div class="text-sm font-semibold">+91 7304138393</div>
+                            </div>
+                        </a>
+
+                        <!-- Location Card -->
+                        <div class="p-4 rounded-xl border border-zinc-200 dark:border-studio-border bg-white dark:bg-studio-900 flex items-center gap-3">
+                            <div class="p-2.5 rounded-lg bg-amber-500/10 text-amber-500 shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-zinc-500 font-mono">Location</div>
+                                <div class="text-sm font-semibold">Malwani Village, Marve, Malad (W), Mumbai</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-200 dark:border-studio-border py-8 text-center text-xs font-mono text-zinc-500">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 Tejas Koli. Built for GitHub Pages.</p>
+            <div class="flex items-center gap-6">
+                <a href="https://youtube.com/@skeletonsayssubscribe" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors">YouTube</a>
+                <a href="mailto:tejaskoli0752@gmail.com" class="hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors">Email</a>
+                <a href="#" class="hover:text-emerald-500 transition-colors">Back to top ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Dark / Light Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlEl = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            htmlEl.classList.toggle('dark');
+            htmlEl.classList.toggle('light');
+        });
+
+        // Copy Email Utility
+        function copyEmail() {
+            navigator.clipboard.writeText('tejaskoli0752@gmail.com');
+            const btn = document.getElementById('copy-btn');
+            btn.textContent = 'Copied!';
+            btn.classList.add('text-emerald-500', 'border-emerald-500');
+            setTimeout(() => {
+                btn.textContent = 'Copy';
+                btn.classList.remove('text-emerald-500', 'border-emerald-500');
+            }, 2000);
+        }
+
+        // Scroll Reveal Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
